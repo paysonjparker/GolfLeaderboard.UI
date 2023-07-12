@@ -14,7 +14,7 @@ const routes: Routes = [
     component: GolfCourseListComponent
   },
   {
-    path: 'golf-course/:golfCourseName',
+    path: 'golf-course/:Id',
     component: GolfCourseComponent,
   }
 ];

@@ -15,6 +15,9 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MenubarModule } from 'primeng/menubar';
 import { TableModule } from 'primeng/table';
 import { ButtonModule } from 'primeng/button';
+import { HttpClientModule } from '@angular/common/http';
+import { CardModule } from 'primeng/card';
+
 
 
 @NgModule({
@@ -29,10 +32,12 @@ import { ButtonModule } from 'primeng/button';
     BrowserModule,
     AppRoutingModule,
     NgbModule,
+    HttpClientModule,
     BrowserAnimationsModule,
     MenubarModule,
     TableModule,
     ButtonModule,
+    CardModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

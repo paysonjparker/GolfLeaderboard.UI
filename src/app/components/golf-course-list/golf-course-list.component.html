@@ -1,5 +1,5 @@
 <div class="m-4">
-    <p-table [value]="golfCourses" [paginator]="true" [rows]="5" [showCurrentPageReport]="true"
+    <p-table [value]="golfCourses" [paginator]="true" [rows]="10" [showCurrentPageReport]="true"
         [resizableColumns]="true"
         [(selection)]="selectedGolfCourse"
         selectionMode="single"
@@ -16,7 +16,7 @@
             </tr>
         </ng-template>
         <ng-template pTemplate="body" let-golfCourse>
-            <tr [pSelectableRow]="golfCourse" (click)="onSelectGolfCourse(golfCourse.name)">
+            <tr [pSelectableRow]="golfCourse" (click)="onSelectGolfCourse(golfCourse.id)">
                 <td>{{ golfCourse.name }}</td>
                 <td>{{ golfCourse.location }}</td>
                 <td>{{ golfCourse.slopeRating }}</td>

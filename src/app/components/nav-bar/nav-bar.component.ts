@@ -60,14 +60,8 @@ export class NavBarComponent {
             routerLink: 'golf-course-list'
           },
           {
-            label: 'Edit',
-            icon: 'pi pi-pencil',
-            items: [
-              {
-                label: 'New',
-                icon: 'pi pi-plus'
-              }
-            ]
+            label: 'New',
+            icon: 'pi pi-fw pi-plus',
           }
         ]
       },

@@ -1,5 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { Router } from '@angular/router';
+import { GolfCourse } from 'src/app/models/golf-course';
+import { GolfCourseServiceService } from 'src/app/services/golf-course-service.service';
 
 
 @Component({
@@ -9,37 +11,25 @@ import { Router } from '@angular/router';
 })
 export class GolfCourseListComponent {
 
-  golfCourses!: any[];
+  @Input()
+  golfCourse!: GolfCourse;
+
+  golfCourses: GolfCourse[] = [];
 
   selectedGolfCourse!: any;
 
-  constructor(private router: Router){
+  constructor(private router: Router, private service: GolfCourseServiceService){
     
   }
 
   ngOnInit(){
-    this.golfCourses = [
-      {
-        name: "Grays Harbor Country Club",
-        location: "Aberdeen, WA",
-        slopeRating: 120,
-        courseRating: 68.0,
-        yardage: 5758,
-        par: 70,
-      },
-      {
-        name: "Augusta National Golf Club",
-        location: "Augusta, GA",
-        slopeRating: 135,
-        courseRating: 74.0,
-        yardage: 7475,
-        par: 72,
-      }
-    ];
+    this.service.getGolfCourses((golfCourses: GolfCourse[]) => this.golfCourses = golfCourses);
+    console.log(this.golfCourses);
+
   }
 
-  onSelectGolfCourse(golfCourseName: string){
-    console.log(golfCourseName);
-    this.router.navigate(['/golf-course/' + golfCourseName]);
+  onSelectGolfCourse(golfCourseId: string){
+    console.log(golfCourseId);
+    this.router.navigate(['/golf-course/' + golfCourseId]);
   }
 }
