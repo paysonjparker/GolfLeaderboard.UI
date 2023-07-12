@@ -57,6 +57,7 @@ export class NavBarComponent {
           {
             label: 'View',
             icon: 'pi pi-eye',
+            routerLink: 'golf-course-list'
           },
           {
             label: 'Edit',
