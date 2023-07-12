@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
+
 
 @Component({
   selector: 'app-golf-course-list',
@@ -8,6 +10,12 @@ import { Component } from '@angular/core';
 export class GolfCourseListComponent {
 
   golfCourses!: any[];
+
+  selectedGolfCourse!: any;
+
+  constructor(private router: Router){
+    
+  }
 
   ngOnInit(){
     this.golfCourses = [
@@ -28,5 +36,10 @@ export class GolfCourseListComponent {
         par: 72,
       }
     ];
+  }
+
+  onSelectGolfCourse(golfCourseName: string){
+    console.log(golfCourseName);
+    this.router.navigate(['/golf-course/' + golfCourseName]);
   }
 }
