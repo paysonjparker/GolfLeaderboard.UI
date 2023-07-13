@@ -22,11 +22,14 @@ export class GolfCourseServiceService {
       });
   }
 
-  public getGolfCourseById(golfCourseId: string, callback: (golfCourse: GolfCourse) => void): void {
-    this.http.get<GolfCourse>(this.golfLeaderboardApiUrl + "/GolfCourses/" + golfCourseId).
+  public getGolfCourseById(id : string) {
+    return this.http.get<GolfCourse>(this.golfLeaderboardApiUrl + "/GolfCourses/" + id);
+  };
+
+  public deleteGolfCourse(id: string, callback: () => void): void {
+    this.http.delete(this.golfLeaderboardApiUrl + "/GolfCourses/" + id).
       subscribe((data) => {
-        callback(data);
-        console.log(data);
+        callback();
       });
   }
 }

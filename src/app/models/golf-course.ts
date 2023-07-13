@@ -1,9 +1,9 @@
 export interface GolfCourse {
-    Id: string,
-    Name: string,
-    Location: string,
-    SlopeRating: number,
-    CourseRating: number,
-    Yardage: number,
-    Par: number
+    id: string,
+    name: string,
+    location: string,
+    slopeRating: number,
+    courseRating: number,
+    yardage: number,
+    par: number
 }

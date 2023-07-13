@@ -25,7 +25,6 @@ export class GolfCourseListComponent {
   ngOnInit(){
     this.service.getGolfCourses((golfCourses: GolfCourse[]) => this.golfCourses = golfCourses);
     console.log(this.golfCourses);
-
   }
 
   onSelectGolfCourse(golfCourseId: string){
