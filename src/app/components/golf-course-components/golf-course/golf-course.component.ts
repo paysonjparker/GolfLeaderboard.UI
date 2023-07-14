@@ -29,7 +29,8 @@ export class GolfCourseComponent {
 
   ngOnInit() {
     console.log(this.route.snapshot.params['Id']);
-    this.service.getGolfCourseById(this.route.snapshot.params['Id']).subscribe((golfCourse: GolfCourse) => this.golfCourse = golfCourse);
+    var id = this.route.snapshot.params['Id'];
+    this.service.getGolfCourseById(id).subscribe((golfCourse: GolfCourse) => this.golfCourse = golfCourse);
   }
 
   onDeleteButtonClick() {
@@ -53,6 +54,7 @@ export class GolfCourseComponent {
   }
 
   onEditButtonClick(){
-
+    var id = this.route.snapshot.params['Id'];
+    this.router.navigate(['editGolfCourse/' + id]);
   }
 }
