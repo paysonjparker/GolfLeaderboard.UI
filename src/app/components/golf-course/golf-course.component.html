@@ -6,7 +6,7 @@
             <h4>{{golfCourse.courseRating}}/{{golfCourse.slopeRating}}</h4>
         </ng-template>
         <ng-template pTemplate="footer">
-            <p-button label="Edit" icon="pi pi-pencil"></p-button>
+            <p-button (click)="onEditButtonClick()" label="Edit" icon="pi pi-pencil"></p-button>
             
             <p-button (click)="onDeleteButtonClick()" label="Delete" icon="pi pi-trash" styleClass="p-button-danger" [style]="{ 'margin-left': '.5em' }"></p-button>
         </ng-template>

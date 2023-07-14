@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { environments } from '../enironments/environments';
 import { GolfCourse } from '../models/golf-course';
+import { Observable, catchError } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -26,10 +27,11 @@ export class GolfCourseServiceService {
     return this.http.get<GolfCourse>(this.golfLeaderboardApiUrl + "/GolfCourses/" + id);
   };
 
-  public deleteGolfCourse(id: string, callback: () => void): void {
-    this.http.delete(this.golfLeaderboardApiUrl + "/GolfCourses/" + id).
-      subscribe((data) => {
-        callback();
-      });
+  public deleteGolfCourse(id: string): Observable<void> {
+    return this.http.delete<void>(this.golfLeaderboardApiUrl + "/GolfCourses/" + id,
+    ).pipe(
+      
+    );
   }
+  
 }
