@@ -28,10 +28,7 @@ export class GolfCourseServiceService {
   };
 
   public deleteGolfCourse(id: string): Observable<void> {
-    return this.http.delete<void>(this.golfLeaderboardApiUrl + "/GolfCourses/" + id,
-    ).pipe(
-      
-    );
+    return this.http.delete<void>(this.golfLeaderboardApiUrl + "/GolfCourses/" + id);
   }
   
 }
