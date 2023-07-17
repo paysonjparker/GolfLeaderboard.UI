@@ -31,4 +31,7 @@ export class GolfCourseServiceService {
     return this.http.delete<void>(this.golfLeaderboardApiUrl + "/GolfCourses/" + id);
   }
   
+  public updateProduct(id: string, golfCourse: GolfCourse): Observable<GolfCourse> {
+    return this.http.put<GolfCourse>(this.golfLeaderboardApiUrl + "/GolfCourses/" + id, golfCourse);
+  }
 }

@@ -1,17 +1,36 @@
-<p>golf-course-edit works!</p>
-<div class="card flex flex-column gap-3 p-4" style="text-align: center; max-width: 50rem;margin: auto;margin-top: 3rem;">
-    <div class="p-inputgroup">
-        <input pInputText placeholder="Username" />
-    </div>
-
-    <div class="p-inputgroup">
-        <span class="p-inputgroup-addon">$</span>
-        <input type="text" pInputText placeholder="Price" />
-        <span class="p-inputgroup-addon">.00</span>
-    </div>
-
-    <div class="p-inputgroup">
-        <span class="p-inputgroup-addon">www</span>
-        <input type="text" pInputText placeholder="Website" />
+<body>
+<div class="card flex flex-column gap-3 p-4"
+    style="text-align: center; max-width: 50rem;margin: auto;margin-top: 3rem;">
+    <form (ngSubmit)="onSubmit()">
+        <div class="form-floating mb-2">
+            <input type="text" class="form-control" id="name" value="{{golfCourse.name}}">
+            <label for="name">Golf Course Name</label>
+        </div>
+        <div class="form-floating mb-2">
+            <input type="text" class="form-control" id="location" value="{{golfCourse.location}}">
+            <label for="location">Location</label>
+        </div>
+        <div class="form-floating mb-2">
+            <input type="number" class="form-control" id="slopeRating" value="{{golfCourse.slopeRating}}">
+            <label for="slopeRating">Slope Rating</label>
+        </div>
+        <div class="form-floating mb-2">
+            <input type="number" class="form-control" id="courseRating" value="{{golfCourse.courseRating}}">
+            <label for="courseRating">Course Rating</label>
+        </div>
+        <div class="form-floating mb-2">
+            <input type="number" class="form-control" id="yardage" value="{{golfCourse.yardage}}">
+            <label for="yardage">Yardage</label>
+        </div>
+        <div class="form-floating mb-2">
+            <input type="number" class="form-control" id="par" value="{{golfCourse.par}}">
+            <label for="par">Par</label>
+        </div>
+        
+    </form>
+    <div class="col-12">
+        <p-button styleClass="p-button-secondary m-2" (click)="onCancel()">Cancel</p-button>
+        <p-button styleClass="m-2" (click)="onSubmit()">Confirm Edit</p-button>
     </div>
 </div>
+</body>
