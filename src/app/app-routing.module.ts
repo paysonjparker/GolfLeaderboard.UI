@@ -4,6 +4,7 @@ import { GolfCourseListComponent } from './components/golf-course-components/gol
 import { HomeComponent } from './components/home/home.component';
 import { GolfCourseComponent } from './components/golf-course-components/golf-course/golf-course.component';
 import { GolfCourseEditComponent } from './components/golf-course-components/golf-course-edit/golf-course-edit.component';
+import { GolfCourseCreateComponent } from './components/golf-course-components/golf-course-create/golf-course-create.component';
 
 const routes: Routes = [
   {
@@ -21,7 +22,11 @@ const routes: Routes = [
   {
     path: 'editGolfCourse/:Id',
     component: GolfCourseEditComponent
-  }
+  },
+  {
+    path: 'createGolfCourse',
+    component: GolfCourseCreateComponent
+  },
 ];
 
 @NgModule({

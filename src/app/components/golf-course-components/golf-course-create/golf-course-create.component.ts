@@ -1,16 +1,16 @@
 import { Component } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { FormBuilder } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
-import { ConfirmationService, MessageService } from 'primeng/api';
 import { GolfCourse } from 'src/app/models/golf-course';
+import { GolfCourseRequest } from 'src/app/models/golf-course-request';
 import { GolfCourseServiceService } from 'src/app/services/golf-course-service.service';
 
 @Component({
-  selector: 'app-golf-course-edit',
-  templateUrl: './golf-course-edit.component.html',
-  styleUrls: ['./golf-course-edit.component.css']
+  selector: 'app-golf-course-create',
+  templateUrl: './golf-course-create.component.html',
+  styleUrls: ['./golf-course-create.component.css']
 })
-export class GolfCourseEditComponent {
+export class GolfCourseCreateComponent {
 
   golfCourse: GolfCourse = {
     id: "",
@@ -26,15 +26,9 @@ export class GolfCourseEditComponent {
 
   }
 
-  ngOnInit() {
-    // this.golfCourseEditForm = this.createGolfCourseEditForm();
-    var id = this.route.snapshot.params['Id'];
-    this.service.getGolfCourseById(id).subscribe((golfCourse: GolfCourse) => this.golfCourse = golfCourse);
-  }
 
   onSubmit() {
-    const golfCourseRequest: GolfCourse = {
-      id: this.route.snapshot.params['Id'],
+    const golfCourseRequest: GolfCourseRequest = {
       name: (document.getElementById("name") as HTMLInputElement).value,
       location: (document.getElementById("location") as HTMLInputElement).value,
       slopeRating: Number((document.getElementById("slopeRating") as HTMLInputElement).value),
@@ -43,11 +37,13 @@ export class GolfCourseEditComponent {
       par: Number((document.getElementById("par") as HTMLInputElement).value),
     };
     console.log(golfCourseRequest);
-    this.service.updateGolfCourse(golfCourseRequest.id, golfCourseRequest).subscribe((golfCourse: GolfCourse) => this.golfCourse = golfCourse);
-    this.router.navigate(['/golf-course/' + golfCourseRequest.id]);
+    let status = this.service.createGolfCourse(golfCourseRequest, () => {
+      console.log("Success create a Golf Course");
+    });    
+    this.router.navigate(['/golf-course-list']);
   }
 
   onCancel(){
-    this.router.navigate(['/golf-course/' + this.route.snapshot.params['Id']]);
+    history.back();
   }
 }

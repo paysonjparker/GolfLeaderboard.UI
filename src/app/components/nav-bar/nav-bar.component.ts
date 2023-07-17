@@ -62,6 +62,7 @@ export class NavBarComponent {
           {
             label: 'New',
             icon: 'pi pi-fw pi-plus',
+            routerLink: 'createGolfCourse'
           }
         ]
       },
