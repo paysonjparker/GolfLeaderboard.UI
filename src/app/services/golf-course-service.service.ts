@@ -32,7 +32,7 @@ export class GolfCourseServiceService {
     return this.http.delete<void>(this.golfLeaderboardApiUrl + "/GolfCourses/" + id);
   }
   
-  public updateGolfCourse(id: string, golfCourse: GolfCourse): Observable<GolfCourse> {
+  public updateGolfCourse(id: string, golfCourse: GolfCourseRequest): Observable<GolfCourse> {
     return this.http.put<GolfCourse>(this.golfLeaderboardApiUrl + "/GolfCourses/" + id, golfCourse);
   }
 

@@ -3,6 +3,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ConfirmationService, MessageService } from 'primeng/api';
 import { GolfCourse } from 'src/app/models/golf-course';
+import { GolfCourseRequest } from 'src/app/models/golf-course-request';
 import { GolfCourseServiceService } from 'src/app/services/golf-course-service.service';
 
 @Component({
@@ -33,8 +34,7 @@ export class GolfCourseEditComponent {
   }
 
   onSubmit() {
-    const golfCourseRequest: GolfCourse = {
-      id: this.route.snapshot.params['Id'],
+    const golfCourseRequest: GolfCourseRequest = {
       name: (document.getElementById("name") as HTMLInputElement).value,
       location: (document.getElementById("location") as HTMLInputElement).value,
       slopeRating: Number((document.getElementById("slopeRating") as HTMLInputElement).value),
@@ -43,8 +43,8 @@ export class GolfCourseEditComponent {
       par: Number((document.getElementById("par") as HTMLInputElement).value),
     };
     console.log(golfCourseRequest);
-    this.service.updateGolfCourse(golfCourseRequest.id, golfCourseRequest).subscribe((golfCourse: GolfCourse) => this.golfCourse = golfCourse);
-    this.router.navigate(['/golf-course/' + golfCourseRequest.id]);
+    this.service.updateGolfCourse(this.golfCourse.id, golfCourseRequest).subscribe((golfCourse: GolfCourse) => this.golfCourse = golfCourse);
+    this.router.navigate(['/golf-course/' + this.golfCourse.id]);
   }
 
   onCancel(){
