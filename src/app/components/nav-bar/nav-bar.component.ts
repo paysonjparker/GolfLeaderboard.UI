@@ -43,6 +43,7 @@ export class NavBarComponent {
           {
             label: 'View',
             icon: 'pi pi-eye',
+            routerLink: 'golfer-list'
           },
           {
             label: 'New',

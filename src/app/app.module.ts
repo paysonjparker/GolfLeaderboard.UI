@@ -22,6 +22,7 @@ import { ConfirmDialogModule } from 'primeng/confirmdialog';
 import { ToastModule } from 'primeng/toast';
 import { InputTextModule } from 'primeng/inputtext';
 import { GolfCourseCreateComponent } from './components/golf-course-components/golf-course-create/golf-course-create.component';
+import { GolferListComponent } from './components/golfer-components/golfer-list/golfer-list.component';
 
 
 @NgModule({
@@ -33,6 +34,7 @@ import { GolfCourseCreateComponent } from './components/golf-course-components/g
     GolfCourseListComponent,
     GolfCourseEditComponent,
     GolfCourseCreateComponent,
+    GolferListComponent,
   ],
   imports: [
     BrowserModule,
