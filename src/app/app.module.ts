@@ -23,6 +23,11 @@ import { ToastModule } from 'primeng/toast';
 import { InputTextModule } from 'primeng/inputtext';
 import { GolfCourseCreateComponent } from './components/golf-course-components/golf-course-create/golf-course-create.component';
 import { GolferListComponent } from './components/golfer-components/golfer-list/golfer-list.component';
+import { GolferComponent } from './components/golfer-components/golfer/golfer.component';
+import { GolferCreateComponent } from './components/golfer-components/golfer-create/golfer-create.component';
+import { GolferEditComponent } from './components/golfer-components/golfer-edit/golfer-edit.component';
+import { ScoreEditComponent } from './components/score-components/score-edit/score-edit.component';
+import { ScoreCreateComponent } from './components/score-components/score-create/score-create.component';
 
 
 @NgModule({
@@ -35,6 +40,11 @@ import { GolferListComponent } from './components/golfer-components/golfer-list/
     GolfCourseEditComponent,
     GolfCourseCreateComponent,
     GolferListComponent,
+    GolferComponent,
+    GolferCreateComponent,
+    GolferEditComponent,
+    ScoreEditComponent,
+    ScoreCreateComponent,
   ],
   imports: [
     BrowserModule,
