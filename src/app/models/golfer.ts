@@ -1,7 +1,7 @@
 export interface Golfer {
-    Id: string,
-    Name: string,
-    HandicapIndex: number,
-    HomeCourse: string,
-    Scores: number[],
+    id: string,
+    name: string,
+    handicapIndex: number,
+    homeCourse: string,
+    scores: number[],
 }

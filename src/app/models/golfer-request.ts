@@ -1,5 +1,6 @@
 export interface GolferRequest {
-    Name: string,
-    HandicapIndex: number,
-    HomeCourse: string,
+    name: string,
+    handicapIndex: number,
+    homeCourse: string,
+    scores: number[],
 }

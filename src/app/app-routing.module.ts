@@ -6,6 +6,8 @@ import { GolfCourseComponent } from './components/golf-course-components/golf-co
 import { GolfCourseEditComponent } from './components/golf-course-components/golf-course-edit/golf-course-edit.component';
 import { GolfCourseCreateComponent } from './components/golf-course-components/golf-course-create/golf-course-create.component';
 import { GolferListComponent } from './components/golfer-components/golfer-list/golfer-list.component';
+import { GolferComponent } from './components/golfer-components/golfer/golfer.component';
+import { GolferEditComponent } from './components/golfer-components/golfer-edit/golfer-edit.component';
 
 const routes: Routes = [
   {
@@ -31,6 +33,14 @@ const routes: Routes = [
   {
     path: 'golfer-list',
     component: GolferListComponent
+  },
+  {
+    path: 'golfer/:Id',
+    component: GolferComponent
+  },
+  {
+    path: 'editGolfer/:Id',
+    component: GolferEditComponent
   }
 ];
 

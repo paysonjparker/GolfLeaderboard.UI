@@ -42,7 +42,6 @@ export class GolfCourseEditComponent {
       yardage: Number((document.getElementById("yardage") as HTMLInputElement).value),
       par: Number((document.getElementById("par") as HTMLInputElement).value),
     };
-    console.log(golfCourseRequest);
     this.service.updateGolfCourse(this.golfCourse.id, golfCourseRequest).subscribe((golfCourse: GolfCourse) => this.golfCourse = golfCourse);
     this.router.navigate(['/golf-course/' + this.golfCourse.id]);
   }
