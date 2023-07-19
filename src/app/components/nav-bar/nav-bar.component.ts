@@ -47,7 +47,8 @@ export class NavBarComponent {
           },
           {
             label: 'New',
-            icon: 'pi pi-user-plus'
+            icon: 'pi pi-user-plus',
+            routerLink: 'createGolfer'
           },
         ]
       },

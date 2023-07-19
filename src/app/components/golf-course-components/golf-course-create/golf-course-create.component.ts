@@ -36,7 +36,6 @@ export class GolfCourseCreateComponent {
       yardage: Number((document.getElementById("yardage") as HTMLInputElement).value),
       par: Number((document.getElementById("par") as HTMLInputElement).value),
     };
-    console.log(golfCourseRequest);
     let status = this.service.createGolfCourse(golfCourseRequest, () => {
       console.log("Success create a Golf Course");
     });    
