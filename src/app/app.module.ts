@@ -28,6 +28,7 @@ import { CardModule } from 'primeng/card';
 import { ConfirmDialogModule } from 'primeng/confirmdialog';
 import { ToastModule } from 'primeng/toast';
 import { InputTextModule } from 'primeng/inputtext';
+import { GalleriaModule } from 'primeng/galleria';
 
 
 
@@ -60,6 +61,7 @@ import { InputTextModule } from 'primeng/inputtext';
     ConfirmDialogModule,
     ToastModule,
     InputTextModule,
+    GalleriaModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

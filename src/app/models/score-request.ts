@@ -1,3 +1,4 @@
 export interface ScoreRequest {
-    Total: number,
+    total: number,
+    golferId: string,
 }

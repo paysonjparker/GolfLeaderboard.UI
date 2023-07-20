@@ -1,5 +1,5 @@
 export interface Score {
-    Id: string,
-    Total: number,
-    GolferId: string,
+    id: string,
+    total: number,
+    golferId: string,
 }
