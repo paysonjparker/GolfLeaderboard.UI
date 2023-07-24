@@ -39,4 +39,8 @@ export class GolferServiceService {
         callback();
       });
   }
+  
+  public getAllMembers(homeCourseName : string) {
+    return this.http.get<Golfer[]>(this.golfLeaderboardApiUrl + "/Golfers/" + homeCourseName);
+  };
 }
