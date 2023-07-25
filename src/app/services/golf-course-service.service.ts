@@ -4,6 +4,7 @@ import { environments } from '../enironments/environments';
 import { GolfCourse } from '../models/golf-course';
 import { Observable, catchError } from 'rxjs';
 import { GolfCourseRequest } from '../models/golf-course-request';
+import { Golfer } from '../models/golfer';
 
 @Injectable({
   providedIn: 'root'

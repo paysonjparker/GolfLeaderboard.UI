@@ -3,6 +3,9 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { GolfCourse } from 'src/app/models/golf-course';
 import { GolfCourseServiceService } from 'src/app/services/golf-course-service.service';
 import { ConfirmationService, MessageService, ConfirmEventType } from 'primeng/api';
+import { Golfer } from 'src/app/models/golfer';
+import { GolferServiceService } from 'src/app/services/golfer-service.service';
+import { elementAt } from 'rxjs';
 
 
 @Component({
@@ -12,6 +15,13 @@ import { ConfirmationService, MessageService, ConfirmEventType } from 'primeng/a
   providers: [ConfirmationService, MessageService],
 })
 export class GolfCourseComponent {
+
+  @Input()
+  golfer!: Golfer;
+
+  golfers: Golfer[] = [];
+
+  selectedGolfer!: any;
 
   golfCourse: GolfCourse = {
     id: "",
@@ -23,14 +33,15 @@ export class GolfCourseComponent {
     par: 0
   };
 
-  constructor(private router: Router, private route: ActivatedRoute, private service: GolfCourseServiceService, private confirmationService: ConfirmationService, private messageService: MessageService) {
+  constructor(private router: Router, private route: ActivatedRoute, private golfCourseService: GolfCourseServiceService, private golferService: GolferServiceService, private confirmationService: ConfirmationService, private messageService: MessageService) {
 
   }
 
   ngOnInit() {
-    console.log(this.route.snapshot.params['Id']);
     var id = this.route.snapshot.params['Id'];
-    this.service.getGolfCourseById(id).subscribe((golfCourse: GolfCourse) => this.golfCourse = golfCourse);
+    this.golfCourseService.getGolfCourseById(id).subscribe((golfCourse: GolfCourse) => this.golfCourse = golfCourse);
+    this.golferService.getAllMembers(this.golfCourse.name);
+
   }
 
   onDeleteButtonClick() {
@@ -40,7 +51,7 @@ export class GolfCourseComponent {
       icon: 'pi pi-info-circle',
       accept: () => {
         // this.service.deleteGolfCourse(this.golfCourse.id);
-        this.service.deleteGolfCourse(this.route.snapshot.params['Id']).subscribe({
+        this.golfCourseService.deleteGolfCourse(this.route.snapshot.params['Id']).subscribe({
           next: () => {
             this.router.navigate(['golf-course-list']);
             // this.messageService.add({ severity: 'error', summary: 'Successfully deleted:', detail: this.golfCourse.name});
@@ -53,8 +64,14 @@ export class GolfCourseComponent {
     });
   }
 
-  onEditButtonClick(){
+  onEditButtonClick() {
+    console.log(this.golfers);
     var id = this.route.snapshot.params['Id'];
     this.router.navigate(['editGolfCourse/' + id]);
+  }
+
+  onSelectGolfer(golferId: string) {
+    console.log(golferId);
+    this.router.navigate(['/golfer/' + golferId]);
   }
 }
