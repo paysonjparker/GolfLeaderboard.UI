@@ -13,6 +13,7 @@ export class NavBarComponent {
   ngOnInit() {
     this.items = [
       {
+        disabled: true,
         label: 'Tournament Central',
         icon: 'pi pi-star',
         items: [
@@ -67,6 +68,11 @@ export class NavBarComponent {
             routerLink: 'createGolfCourse'
           }
         ]
+      },
+      {
+        label: 'About',
+        icon: 'pi pi-info-circle',
+        routerLink: 'about'
       },
     ];
   }

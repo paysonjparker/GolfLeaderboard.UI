@@ -16,6 +16,10 @@ import { GolferCreateComponent } from './components/golfer-components/golfer-cre
 import { GolferEditComponent } from './components/golfer-components/golfer-edit/golfer-edit.component';
 import { ScoreEditComponent } from './components/score-components/score-edit/score-edit.component';
 import { ScoreCreateComponent } from './components/score-components/score-create/score-create.component';
+import { LeaderboardListComponent } from './components/leaderboard-components/leaderboard-list/leaderboard-list.component';
+import { LeaderboardComponent } from './components/leaderboard-components/leaderboard/leaderboard.component';
+import { LeaderboardCreateComponent } from './components/leaderboard-components/leaderboard-create/leaderboard-create.component';
+import { LeaderboardEditComponent } from './components/leaderboard-components/leaderboard-edit/leaderboard-edit.component';
 
 //Modules
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
@@ -29,11 +33,10 @@ import { ConfirmDialogModule } from 'primeng/confirmdialog';
 import { ToastModule } from 'primeng/toast';
 import { InputTextModule } from 'primeng/inputtext';
 import { GalleriaModule } from 'primeng/galleria';
-import { LeaderboardListComponent } from './components/leaderboard-components/leaderboard-list/leaderboard-list.component';
-import { LeaderboardComponent } from './components/leaderboard-components/leaderboard/leaderboard.component';
-import { LeaderboardCreateComponent } from './components/leaderboard-components/leaderboard-create/leaderboard-create.component';
-import { LeaderboardEditComponent } from './components/leaderboard-components/leaderboard-edit/leaderboard-edit.component';
-
+import { TooltipModule } from 'primeng/tooltip';
+import { AboutComponent } from './components/about/about.component';
+import { ChipModule } from 'primeng/chip';
+import { DividerModule } from 'primeng/divider';
 
 
 @NgModule({
@@ -55,6 +58,7 @@ import { LeaderboardEditComponent } from './components/leaderboard-components/le
     LeaderboardComponent,
     LeaderboardCreateComponent,
     LeaderboardEditComponent,
+    AboutComponent,
   ],
   imports: [
     BrowserModule,
@@ -70,6 +74,9 @@ import { LeaderboardEditComponent } from './components/leaderboard-components/le
     ToastModule,
     InputTextModule,
     GalleriaModule,
+    TooltipModule,
+    ChipModule,
+    DividerModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

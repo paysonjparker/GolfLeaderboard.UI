@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-home',
@@ -7,5 +8,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent {
 
-  
+  constructor(private router: Router, private route: ActivatedRoute) {
+
+  }
+
+  navigateToAbout(){
+    this.router.navigate(['/about']);
+  }
 }

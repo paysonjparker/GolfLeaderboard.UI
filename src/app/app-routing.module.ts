@@ -10,6 +10,7 @@ import { GolferComponent } from './components/golfer-components/golfer/golfer.co
 import { GolferEditComponent } from './components/golfer-components/golfer-edit/golfer-edit.component';
 import { GolferCreateComponent } from './components/golfer-components/golfer-create/golfer-create.component';
 import { ScoreCreateComponent } from './components/score-components/score-create/score-create.component';
+import { AboutComponent } from './components/about/about.component';
 
 const routes: Routes = [
   {
@@ -52,6 +53,10 @@ const routes: Routes = [
     path: 'addScore/:Id',
     component: ScoreCreateComponent
   },
+  {
+    path: 'about',
+    component: AboutComponent
+  }
 ];
 
 @NgModule({
