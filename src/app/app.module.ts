@@ -29,6 +29,10 @@ import { ConfirmDialogModule } from 'primeng/confirmdialog';
 import { ToastModule } from 'primeng/toast';
 import { InputTextModule } from 'primeng/inputtext';
 import { GalleriaModule } from 'primeng/galleria';
+import { LeaderboardListComponent } from './components/leaderboard-components/leaderboard-list/leaderboard-list.component';
+import { LeaderboardComponent } from './components/leaderboard-components/leaderboard/leaderboard.component';
+import { LeaderboardCreateComponent } from './components/leaderboard-components/leaderboard-create/leaderboard-create.component';
+import { LeaderboardEditComponent } from './components/leaderboard-components/leaderboard-edit/leaderboard-edit.component';
 
 
 
@@ -47,6 +51,10 @@ import { GalleriaModule } from 'primeng/galleria';
     GolferEditComponent,
     ScoreEditComponent,
     ScoreCreateComponent,
+    LeaderboardListComponent,
+    LeaderboardComponent,
+    LeaderboardCreateComponent,
+    LeaderboardEditComponent,
   ],
   imports: [
     BrowserModule,
