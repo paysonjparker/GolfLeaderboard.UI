@@ -9,9 +9,14 @@
             <input type="number" class="form-control" id="handicapIndex" placeholder="Handicap Index">
             <label for="handicapIndex">Handicap Index</label>
         </div>
-        <div class="form-floating mb-2">
-            <input type="text" class="form-control" id="homeCourse" placeholder="Home Course">
-            <label for="homeCourse">Home Course</label>
+        <div class="p-float-label mb-2">
+            <!-- <input type="text" class="form-control" id="homeCourse" placeholder="Home Course">
+            <label for="homeCourse">Home Course</label> -->
+
+            <!-- <p-dropdown id="homeCourse" placeholder="Select home course" [options]="golfCourseNames" [(ngModel)]="selectedGolfCourse" optionValue="homeCourse"></p-dropdown> -->
+            <select id="homeCourse" class="form-select" size="4">
+                <option *ngFor="let name of golfCourseNames">{{name}}</option>
+            </select>
         </div>
         
     </form>

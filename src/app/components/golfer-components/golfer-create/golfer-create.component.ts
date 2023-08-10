@@ -1,8 +1,10 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { FormBuilder } from '@angular/forms';
 import { Router, ActivatedRoute } from '@angular/router';
+import { GolfCourse } from 'src/app/models/golf-course';
 import { Golfer } from 'src/app/models/golfer';
 import { GolferRequest } from 'src/app/models/golfer-request';
+import { GolfCourseServiceService } from 'src/app/services/golf-course-service.service';
 import { GolferServiceService } from 'src/app/services/golfer-service.service';
 
 @Component({
@@ -10,7 +12,7 @@ import { GolferServiceService } from 'src/app/services/golfer-service.service';
   templateUrl: './golfer-create.component.html',
   styleUrls: ['./golfer-create.component.css']
 })
-export class GolferCreateComponent {
+export class GolferCreateComponent implements OnInit {
 
   golfer: Golfer = {
     id: "",
@@ -20,8 +22,21 @@ export class GolferCreateComponent {
     scores: [],
   };
 
-  constructor(private router: Router, private route: ActivatedRoute, private service: GolferServiceService, private formBuilder: FormBuilder) {
+  
+  golfCourses: GolfCourse[] | undefined;
 
+  // Used for dropdown on selecting home course
+  // Must be a string
+  golfCourseNames: string[] | undefined;
+
+  selectedGolfCourse: string | undefined;
+
+  constructor(private router: Router, private route: ActivatedRoute, private service: GolferServiceService, private formBuilder: FormBuilder, private golfCourseService: GolfCourseServiceService) {
+
+  }
+
+  ngOnInit(): void {    
+    this.golfCourseService.getGolfCourseNames((golfCourseNames: string[]) => this.golfCourseNames = golfCourseNames);
   }
 
 

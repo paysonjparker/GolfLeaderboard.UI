@@ -43,4 +43,11 @@ export class GolfCourseServiceService {
         callback();
       });
   }
+
+  public getGolfCourseNames(callback: (golfCourseNames: string[]) => void): void {
+    this.http.get<string[]>(this.golfLeaderboardApiUrl + "/GolfCourses/names").
+      subscribe((golfCourseNames: string[]) => {
+        callback(golfCourseNames);
+      });
+  }
 }
