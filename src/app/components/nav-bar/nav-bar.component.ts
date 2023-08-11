@@ -13,6 +13,11 @@ export class NavBarComponent {
   ngOnInit() {
     this.items = [
       {
+        label: 'Home',
+        icon: 'pi pi-home',
+        routerLink: '/'
+      },
+      {
         disabled: true,
         label: 'Tournament Central',
         icon: 'pi pi-star',
