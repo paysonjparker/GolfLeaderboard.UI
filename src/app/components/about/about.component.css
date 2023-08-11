@@ -1,3 +1,9 @@
-.divider{
-    background-color: aqua;
+.container{
+    margin-top: 3rem;
+    text-align: center; 
+    background-color: var(--bgColor); 
+    padding-left: 2rem;
+    padding-right: 2rem;
+    padding-bottom: 1px;
+    padding-top: 1px;
 }
