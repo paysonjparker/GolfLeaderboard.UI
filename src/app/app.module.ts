@@ -40,6 +40,8 @@ import { ChipModule } from 'primeng/chip';
 import { DividerModule } from 'primeng/divider';
 import { AutoCompleteModule } from 'primeng/autocomplete';
 import { DropdownModule } from 'primeng/dropdown';
+import { MessageModule } from 'primeng/message';
+import { MessagesModule } from 'primeng/messages';
 
 @NgModule({
   declarations: [
@@ -83,6 +85,8 @@ import { DropdownModule } from 'primeng/dropdown';
     FormsModule,
     ReactiveFormsModule,
     DropdownModule,
+    MessageModule,
+    MessagesModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
