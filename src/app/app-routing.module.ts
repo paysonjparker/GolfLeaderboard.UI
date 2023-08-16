@@ -11,6 +11,7 @@ import { GolferEditComponent } from './components/golfer-components/golfer-edit/
 import { GolferCreateComponent } from './components/golfer-components/golfer-create/golfer-create.component';
 import { ScoreCreateComponent } from './components/score-components/score-create/score-create.component';
 import { AboutComponent } from './components/about/about.component';
+import { NotFoundComponent } from './components/not-found/not-found.component';
 
 const routes: Routes = [
   {
@@ -56,6 +57,10 @@ const routes: Routes = [
   {
     path: 'about',
     component: AboutComponent
+  },
+  {
+    path: '**',
+    component: NotFoundComponent
   }
 ];
 
